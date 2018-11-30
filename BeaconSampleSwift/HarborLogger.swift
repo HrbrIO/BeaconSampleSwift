@@ -1,9 +1,21 @@
 //
 //  HarborLogger.swift
-//  Beacon Demo
+//  BeaconSampleSwift
 //
-//  Created by Scott Matheson on 11/16/18.
-//  Copyright © 2018 HarborIO, Inc. All rights reserved.
+//  Created by Scott Matheson on 11/30/18.
+//  Copyright © 2018 HarborIO, Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 //
 
 import Foundation
@@ -21,12 +33,12 @@ import HarborBeacon
 //
 
 // From your Harbor acount page
-// Beacon Version ID
-let BEACON_ID = "io.hrbr.iosswift:0.9.0"
-
-// From your Harbor acount page
 // App Version ID
 let APP_ID    = "io.hrbr.samples.halfwaterglass:1.0.0"
+
+// From your Harbor acount page
+// Beacon Version ID
+let BEACON_ID = "io.hrbr.iosswift:0.9.0"
 
 enum HarborUIApplicationDelegateMessage: String {
   case start = "APP_START_MSG"
@@ -125,11 +137,11 @@ class HarborLogger {
   // MARK: - CLLocation Functionality
 
   public static func logLocation(_ location: CLLocation ){
-    let data = ["latitude":     location.coordinate.latitude,
-                "longitude":    location.coordinate.longitude,
-                "altitude":     location.altitude,
-                "hz_accuracy":  location.horizontalAccuracy,
-                "vrt_accuracy": location.verticalAccuracy ] as! [String:String]
+    let data = ["latitude":     "\(location.coordinate.latitude)",
+        "longitude":    "\(location.coordinate.longitude)",
+        "altitude":     "\(location.altitude)",
+        "hz_accuracy":  "\(location.horizontalAccuracy)",
+        "vrt_accuracy": "\(location.verticalAccuracy)" ]
     HarborLogger.log(GEOLOCATION, data: data)
   }
 

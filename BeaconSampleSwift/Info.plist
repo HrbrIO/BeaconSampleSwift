@@ -43,10 +43,14 @@
 	</array>
 	<key>CFBundleDisplayName</key>
 	<string></string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>Harbor</key>
 	<dict>
 		<key>APIKey</key>
-		<string>YOURAPIKEYGOESHERE</string>
+		<string>YOUR_ORGANIZATION API_KEY_GOES_HERE</string>
 	</dict>
 </dict>
 </plist>

@@ -3,16 +3,30 @@
 //  BeaconSampleSwift
 //
 //  Created by Scott Matheson on 11/30/18.
-//  Copyright © 2018 HarborIO, Inc. All rights reserved.
+//  Copyright © 2018 HarborIO, Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+
+    let locationManager = CLLocationManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -20,6 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("FinishLaunchingWithOptions")
         HarborLogger.appStart()
         
+        //locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+
+        //locationManager.distanceFilter = 35
+        //locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.startUpdatingLocation()
+
         return true
     }
     
@@ -57,6 +79,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("WillTerminate")
         HarborLogger.stopHeartbeat()
         HarborLogger.appKill()
+    }
+    
+}
+
+extension AppDelegate: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
+        // create CLLocation from the coordinates of CLVisit
+        let clLocation = CLLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude)
+        
+        // Get location description
+    }
+    
+    func newVisitReceived(_ visit: CLVisit, description: String) {
+        //let location = Location(visit: visit, descriptionString: description)
+        print(visit)
+        // Save location to disk
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        guard let location = locations.first else {
+            return
+        }
+        
+        HarborLogger.logLocation(location)
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
     }
     
 }

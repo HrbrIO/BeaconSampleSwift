@@ -1,0 +1,16 @@
+PODS:
+  - HarborBeacon (1.0.2)
+
+DEPENDENCIES:
+  - HarborBeacon (~> 1.0.2)
+
+SPEC REPOS:
+  https://github.com/HrbrIO/Specs.git:
+    - HarborBeacon
+
+SPEC CHECKSUMS:
+  HarborBeacon: eeb4fda5790b10afd5f8e796d7e10be9156a8b07
+
+PODFILE CHECKSUM: c4c773c896a714000741ce870ba393e13477a2db
+
+COCOAPODS: 1.5.3

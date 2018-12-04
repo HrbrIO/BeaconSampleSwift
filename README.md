@@ -1,32 +1,4 @@
 # BeaconSampleSwift
-Sample iOS Swift application to send Harbor Beacons.
-
-## Deployment
-
-Add your organization API Key to the  [BeaconSampleSwift/Info.plist](BeaconSampleSwift/Info.plist) file in your Xcode Project
-
-```
-<key>Harbor</key>
-<dict>
-<key>APIKey</key>
-<string>YOUR_ORGANIZATION API_KEY_GOES_HERE</string>
-</dict>
-```
-
-Set the APP_ID and BEACON_ID in [BeaconSampleSwift/HarborLogger.swift](BeaconSampleSwift/HarborLogger.swift)
-
-```
-// From your Harbor acount page
-// App Version ID
-let APP_ID    = "io.hrbr.samples.halfwaterglass:1.0.0"
-
-// Beacon Version ID
-let BEACON_ID = "io.hrbr.iosswift:0.9.0"
-```
-
----
-
-# BeaconSampleSwift
 
 Get started with Harbor on iOS:
 
@@ -35,7 +7,9 @@ Get started with Harbor on iOS:
 
 ## Setup
 
-This project uses Apple's Swift 4.2 programming language for iOS. 
+This project uses/requires:
+ - Apple's Swift 4.2 programming language for iOS.
+ - iOS Deployment Target 12.0
 
 If you haven't used Harbor before, welcome! You'll need to [Sign up for a Harbor account](https://www.hrbr.io/try-hrbr) first.
 
@@ -91,27 +65,31 @@ To get started with the Quickstart application follow these steps:
 
 <img width="700px" src="images/samples/click_developer_view.png"/>
 
+### Beacon Messages
+
+|Message Type|Message Data|Description|
+|---|---|---|
+|APP_START_MSG|N/A||
+|APP_BG_MSG|N/A||
+|APP_FG_MSG|N/A||
+|APP_KILL_MSG|N/A||
+|HEARTBEAT|N/A||
+|SCREEN_VIEW|`{  "screen" : screenName } `||
+|SCREEN_DWELL|`{ "screen": screenName, "time" : timeIntervalSince1970 }`||
+|GEOLOCATION|`{ "latitude" : latitude, "longitude" : longitude, "altitude" : altitudeMeters, "hz_accuracy" : horizontalAccuracyMeters, "vrt_accuracy" : verticalAccuracyMeters `||
 
 
+### Beacon Functions
 
-What needs installed on system.
-
-Links for how-to’s for people who don’t know how to.
-
-## Installation
-E.g. If you don’t know you to register your beacon version ID check out this guide. https://docs.hrbr.io/quick-start-guide/#registering-the-beacon.
-
-
-
-## Configuration Options
-
-Optional - Build Instructions (Post installation Configuration Instructions)
-Beacon Message Format
-Or 
-Beacon Functions
-
-Beacon Run and Schedule
-How to check to see if you beacon is working.
+-`HarborLogger.appStart()`
+-`HarborLogger.appBackground()`
+-`HarborLogger.appForeground()`
+-`HarborLogger.appKill()`
+-`HarborLogger.startHeartbeat()`
+-`HarborLogger.stopHeartbeat()`
+-`HarborLogger.logLocation(location)`
+-`HarborLogger.startScreenDwell(viewName)`
+-`HarborLogger.stopScreenDwell(viewName)`
 
 ## License
 

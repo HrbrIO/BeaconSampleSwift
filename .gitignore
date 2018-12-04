@@ -8,6 +8,9 @@
 project.xcworkspace/
 xcuserdata/
 
+# Ignore PHPStorm files
+.idea
+
 # UI Automation Test files
 *.trace
 

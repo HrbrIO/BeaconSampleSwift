@@ -27,7 +27,7 @@ import HarborBeacon
 // <key>Harbor</key>
 // <dict>
 // <key>APIKey</key>
-// <string>YOUR API KEY</string>
+// <string>YOUR_ORGANIZATION API_KEY_GOES_HERE</string>
 // </dict>
 //
 //

@@ -11,7 +11,7 @@ This project uses/requires:
  - Apple's Swift 4.2 programming language for iOS.
  - iOS Deployment Target 12.0
 
-If you haven't used Harbor before, welcome! You'll need to [Sign up for a Harbor account](https://www.hrbr.io/try-hrbr) first.
+If you haven't used Harbor before, welcome! You can check out the [Quick Start Guide](https://docs) first.
 
 Note: if your app uses Objective-C you are on your own.
 

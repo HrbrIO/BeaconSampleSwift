@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '12.0'
+platform :ios, '12.1'
 
 source 'https://github.com/HrbrIO/Specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
@@ -9,7 +9,7 @@ target 'BeaconSampleSwift' do
   use_frameworks!
 
   # Pods for BeaconSampleSwift
-  pod 'HarborBeacon', "~> 1.0.2"
+  pod 'HarborBeacon', "~> 1.2.0"
 
 end
 

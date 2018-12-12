@@ -22,15 +22,9 @@ import Foundation
 import CoreLocation
 import HarborBeacon
 
-//
-// Please add to your Info.plist
-// <key>Harbor</key>
-// <dict>
-// <key>APIKey</key>
-// <string>YOUR_ORGANIZATION API_KEY_GOES_HERE</string>
-// </dict>
-//
-//
+// From your Harbor acount page
+// API Key
+let API_KEY   = "YOUR_ORGANIZATION API_KEY_GOES_HERE"
 
 // From your Harbor acount page
 // App Version ID
@@ -67,7 +61,7 @@ class HarborLogger {
   static func log(_ messageType: String, data:[String:Any]!) {
     print("Sending \(messageType)")
     let dataOut = data ?? [:]
-    BeaconQueue.shared().transmit(messageType, data : dataOut, appVer : APP_ID, beaconVer : BEACON_ID)
+    BeaconQueue.shared().transmit(messageType, data : dataOut, apiKey: API_KEY, appVer : APP_ID, beaconVer : BEACON_ID)
   }
   
   // MARK: - Heartbeat Functionality

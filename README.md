@@ -9,7 +9,7 @@ Get started with Harbor on iOS:
 
 This project uses/requires:
  - Apple's Swift 4.2 programming language for iOS.
- - iOS Deployment Target 12.0
+ - iOS Deployment Target 12.1
 
 If you haven't used Harbor before, welcome! You can check out the [Quick Start Guide](https://docs) first.
 
@@ -37,7 +37,7 @@ To get started with the Quickstart application follow these steps:
 
 <img width="700px" src="images/samples/copy_organization_api_key.png"/>
 
-3. Paste your organization API Key from the earlier step in the `Info.plist`.
+3. Paste your organization API Key from the earlier step in the `HarborLogger.swift`.
 
 <img width="700px" src="images/samples/xcode_api_key.png"/>
 

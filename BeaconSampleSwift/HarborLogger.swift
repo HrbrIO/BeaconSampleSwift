@@ -24,7 +24,7 @@ import HarborBeacon
 
 // From your Harbor acount page
 // API Key
-let API_KEY   = "YOUR_ORGANIZATION API_KEY_GOES_HERE"
+let API_KEY   = "YOUR_ORGANIZATION_API_KEY_GOES_HERE"
 
 // From your Harbor acount page
 // App Version ID

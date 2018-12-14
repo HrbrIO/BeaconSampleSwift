@@ -10,6 +10,7 @@ Get started with Harbor on iOS:
 This project uses/requires:
  - Apple's Swift 4.2 programming language for iOS.
  - iOS Deployment Target 12.1
+ - [Harbor Swift Beacon](https://github.com/HrbrIO/HarborSwiftBeacon)
 
 If you haven't used Harbor before, welcome! You can check out the [Quick Start Guide](https://docs) first.
 
